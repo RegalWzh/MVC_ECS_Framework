@@ -47,6 +47,11 @@ namespace Zero.ZeroEngine.Common
             cacheAppVersion = PlayerPrefs.GetString(appVesionKey, "");
             CheckExtractResource();
         }
+
+        public void Clear()
+        {
+
+        }
         /// <summary>
         /// 释放资源
         /// </summary>

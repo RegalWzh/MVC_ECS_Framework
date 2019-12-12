@@ -16,9 +16,11 @@ namespace Zero.ZeroEngine.ECS
     public class TransferAttComponent : BaseComponent
     {
         public int transferID = 0;//传送点ID
+        public TransferExcel transferData = null;//传送点数据表
         public void Reset()
         {
             transferID = 0;
+            transferData = null;
         }
     }
 }

@@ -36,6 +36,10 @@ namespace Zero.ZeroEngine.ECS
     public class ActionComponent : BaseComponent
     {
         public Animator animator;//动画组件
+        public bool isAfreshBoo = false;//是否刷新过
+        public bool isPauseBoo = false;//是否暂停
+        public bool isTimer = false;//是否计时循环
+        public float loopTime = 0f;//计时循环时间
         public ActionEnumType actionName = ActionEnumType.NULL;//动作枚举
         public bool loopBoo = false;//是否循环
         public OnAnimFinishCB animFinishCB = null;//动作播放完回调

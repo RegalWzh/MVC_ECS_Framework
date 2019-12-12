@@ -13,9 +13,14 @@ using UnityEngine;
 
 namespace Zero.ZeroEngine.Common
 {
+    /// <summary>
+    /// 程序重点常量类
+    /// </summary>
     public class AppConst
     {
         public const string AppName = "TestFramework"; //应用程序名称
+
+        public const bool USE_LUA_BOO = false;//是否使用xlua框架 
 
         public const bool DebugMode = true; //调试模式-用于内部测试(发布手机版本时，改成false后再编译资源)
 

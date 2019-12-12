@@ -138,6 +138,9 @@ namespace Zero.ZeroEngine.Util
             return path;
         }
 
+        /// <summary>
+        /// 获取版本号
+        /// </summary>
         public static string[] GetVersionMap(string path)
         {
             StreamReader sr = new StreamReader(path);
@@ -146,10 +149,24 @@ namespace Zero.ZeroEngine.Util
             return s;
         }
 
+        /// <summary>
+        /// 根据index获取对应版本号数据
+        /// </summary>
         public static string GetVersion(string versionStr,int index)
         {
             string[] tempStr = versionStr.Split('.');
             return tempStr[index];
+        }
+
+        /// <summary>
+        /// 网络是否可用
+        /// </summary>
+        public static bool NetAvailable
+        {
+            get
+            {
+                return Application.internetReachability != NetworkReachability.NotReachable;
+            }
         }
     }
 }

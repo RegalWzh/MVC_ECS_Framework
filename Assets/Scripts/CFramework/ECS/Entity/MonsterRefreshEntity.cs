@@ -15,23 +15,24 @@ namespace Zero.ZeroEngine.ECS
 {
     public class MonsterRefreshEntity : BaseEntity
     {
-        //public NameComponent nameCom;
-        //public PositionComponent positionCom;
-        //public RefreshAttComponent refreshCom;
+        public NameComponent nameCom;
+        public PositionComponent positionCom;
+        public RefreshAttComponent refreshCom;
 
-        //public MonsterRefreshEntity()
-        //{
-        //    nameCom = new NameComponent() { baseEntity = this };
-        //    positionCom = new PositionComponent() { baseEntity = this };
-        //    refreshCom = new RefreshAttComponent() { baseEntity = this };
-        //}
+        public MonsterRefreshEntity()
+        {
+            nameCom = new NameComponent() { baseEntity = this };
+            positionCom = new PositionComponent() { baseEntity = this };
+            refreshCom = new RefreshAttComponent() { baseEntity = this };
+        }
 
-        //public override void Reset()
-        //{
-        //    base.Reset();
-        //    nameCom.Reset();
-        //    positionCom.Reset();
-        //    refreshCom.Reset();
-        //}
+        public override void Reset()
+        {
+            base.Reset();
+            nameCom.Reset();
+            positionCom.Reset();
+            refreshCom.Reset();
+        }
+
     }
 }

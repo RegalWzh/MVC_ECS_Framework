@@ -39,8 +39,8 @@ namespace Zero.ZeroEngine.ECS
         public bool isClearing = false;//是否在清理中
         public int modelID = 0;//模型ID
         public bool isTriggerBoo = true;//是否是触发器
-        public Collider selfCollider = null;//触发器或碰撞体
-        public Rigidbody selfRigidbody = null;//刚体组件
+        public Collider selfCollider = null;//触发器或碰撞体（手游中，主角以外的都为触发器）
+        public Rigidbody selfRigidbody = null;//刚体组件（手游中，主角才有）
 
         public GameObject topPointObj = null;//头顶节点
         public GameObject buttomPointObj = null;//脚底节点

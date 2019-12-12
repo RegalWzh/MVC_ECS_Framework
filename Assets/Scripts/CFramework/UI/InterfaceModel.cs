@@ -14,9 +14,11 @@ using Zero.ZeroEngine.Core;
 
 namespace Zero.ZeroEngine.UI
 {
-    public class InterfaceModel : Singleton<InterfaceModel>
+    public class InterfaceModel
     {
         public virtual void Init()
+        { }
+        public virtual void AfterInit()
         { }
         public virtual void Clear()
         { }

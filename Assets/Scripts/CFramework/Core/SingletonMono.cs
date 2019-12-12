@@ -12,8 +12,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zero.ZeroEngine.Util;
 
+
+//=====================================================
+// - c#
+// - fix 检查过命名规则，是否使用对象池、类对象池优化过。
+//=====================================================
+// - 1.
+// - 2.
+// - 3.
+// - 4.
+// - 5.
+// - 6.
+//======================================================
 namespace Zero.ZeroEngine.Core
 {
+    /// <summary>
+    /// MOMO单例
+    /// </summary>
     public class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T instance;
@@ -24,7 +39,15 @@ namespace Zero.ZeroEngine.Core
             {
                 if (instance == null)
                 {
-                    GameObject obj = new GameObject(typeof(T).Name);
+                    GameObject obj;
+                    if (typeof(T).Name.Equals("UIMgr"))
+                    {
+                        obj = GameObject.Find("UIRoot");
+                    }
+                    else
+                    {
+                        obj = new GameObject(typeof(T).Name);
+                    }
                     DontDestroyOnLoad(obj);
                     instance = obj.GetOrCreatComPonent<T>();
                 }

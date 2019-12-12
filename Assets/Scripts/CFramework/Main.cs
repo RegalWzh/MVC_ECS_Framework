@@ -19,6 +19,7 @@ using Zero.ZeroEngine.Login;
 using Zero.ZeroEngine.SceneFrame;
 using Zero.ZeroEngine.UI;
 using Zero.ZeroEngine.Util;
+using Zero.ZeroEngine.Net;
 /// <summary>
 /// 游戏启动主入口
 /// </summary>
@@ -62,10 +63,18 @@ public class Main : SingletonMono<Main> {
         //事件管理层
         EventMgr.Instance.Init();
         //协程管理层
-        UtilTool.Add<CoroutineMgr>(gameObject);
+        //UtilTool.Add<CoroutineMgr>(gameObject);
         GameObject tempGo0 = GameObject.Find("CoroutinePoolTrs");
         DontDestroyOnLoad(tempGo0);
         CoroutineMgr.Instance.Init(tempGo0);
+
+        //网络基础层
+        NetMgr.Instance.Init();
+        //网络辅助层
+        NetMsgHelper.Instance.Init();
+        //网络运作层
+        NetWorkMgr.Instance.Init();
+
         //资源更新初始化管理层
         UpdateCheckMgr.Instance.Init();
         //AB包资源管理层
@@ -83,7 +92,7 @@ public class Main : SingletonMono<Main> {
         //屏幕辅助缩放类
         ScreenResizeHelper.Init();
         //UI管理层
-        UtilTool.Add<UIMgr>(gameObject);
+        //UtilTool.Add<UIMgr>(gameObject);
         //gameObject.GetOrCreatComPonent<UIMgr>();
         UIMgr.Instance.Init();
         //UI管理辅助层
@@ -110,7 +119,7 @@ public class Main : SingletonMono<Main> {
         //世界角色中心层
         GameObject tempGo5 = GameObject.Find("GameWorldRecyclePoolTrs");
         DontDestroyOnLoad(tempGo5);
-        //GameWorld.Instance.Init(tempGo2.transform, tempGo5.transform);
+        GameWorld.Instance.Init(tempGo2.transform, tempGo5.transform);
 
         _AfterInit();
     }
@@ -181,14 +190,11 @@ public class Main : SingletonMono<Main> {
             ObjectPoolMgr.Instance.ReleaseObject(tempObj,0,true);
             tempObj = null;
         }
-
-
-        UIMgr.Instance.Update();
     }
 
     private void LateUpdate()
     {
-        UIMgr.Instance.LateUpdate();
+
     }
 
     private void OnDestroy()

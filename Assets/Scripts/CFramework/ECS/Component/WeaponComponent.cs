@@ -16,9 +16,9 @@ namespace Zero.ZeroEngine.ECS
     public class WeaponComponent : BaseComponent
     {
         public int rightWeapon = 0;//右边武器模型ID
-        public GameObject rigetWeaponObj = null;
+        public GameObject rigetWeaponObj = null;//右手武器对象
         public int leftWeapon = 0;//左边武器模型ID
-        public GameObject leftWeaponObj = null;
+        public GameObject leftWeaponObj = null;//左手武器对象
         public void Reset()
         {
             rightWeapon = 0;

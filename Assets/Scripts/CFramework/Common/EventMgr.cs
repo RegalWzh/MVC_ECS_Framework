@@ -283,8 +283,6 @@ namespace Zero.ZeroEngine.Common
         /// <summary>
         /// 处理增加监听前的事项，检测参数等等
         /// </summary>
-        /// <param name="eventType"></param>
-        /// <param name="listenerBeingAdded"></param>
         private void OnListenerAdding(string eventType, Delegate listenerBeingAdded)
         {
             if (!m_theRouter.ContainsKey(eventType))

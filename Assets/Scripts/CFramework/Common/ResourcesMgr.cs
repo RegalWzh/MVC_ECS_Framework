@@ -84,7 +84,7 @@ namespace Zero.ZeroEngine.Common
     /// </summary>
     public class AsynvLoadResParam
     {
-        public List<AsyncCallBack> m_CallBackList = new List<AsyncCallBack>();
+        public List<ResMgrAsyncCallBack> m_CallBackList = new List<ResMgrAsyncCallBack>();
         public uint m_Crc;
         public string m_Path;
         public bool m_SpriteBoo;
@@ -102,7 +102,7 @@ namespace Zero.ZeroEngine.Common
     /// <summary>
     /// 异步回调类
     /// </summary>
-    public class AsyncCallBack
+    public class ResMgrAsyncCallBack
     {
         //加载完成的回调(针对ObjectPoolMgr)
         public OnAsyncFinish m_ObjDealFinish = null;
@@ -143,7 +143,7 @@ namespace Zero.ZeroEngine.Common
         //中间类的类对象池
         protected ClassObjectPool<AsynvLoadResParam> m_AsyncLoadResParamPool = new ClassObjectPool<AsynvLoadResParam>(50);
         //回调类的类对象池
-        protected ClassObjectPool<AsyncCallBack> m_AsyncCallBackPool = new ClassObjectPool<AsyncCallBack>(100);
+        protected ClassObjectPool<ResMgrAsyncCallBack> m_AsyncCallBackPool = new ClassObjectPool<ResMgrAsyncCallBack>(100);
         //Mono脚本
         //protected MonoBehaviour m_StarMono;
         //protected Coroutine m_LoadCoroutine;
@@ -221,7 +221,7 @@ namespace Zero.ZeroEngine.Common
                 //清除异步加载中间类中记录的异步回调list，将回调类先重置，后回收，然后移除
                 for(int i = para.m_CallBackList.Count; i >= 0; i--)
                 {
-                    AsyncCallBack tempCallBack = para.m_CallBackList[i];
+                    ResMgrAsyncCallBack tempCallBack = para.m_CallBackList[i];
                     if (tempCallBack != null && resObj == tempCallBack.m_ResObj)
                     {
                         tempCallBack.Reset();
@@ -781,7 +781,7 @@ namespace Zero.ZeroEngine.Common
 
             //往回调列表里加回调
             //这里加的是不针对的回调
-            AsyncCallBack callBack = m_AsyncCallBackPool.Spawn(true);
+            ResMgrAsyncCallBack callBack = m_AsyncCallBackPool.Spawn(true);
             callBack.m_ResDealFinish = dealFinish;
             callBack.m_Param1 = param1;
             callBack.m_Param2 = param2;
@@ -818,7 +818,7 @@ namespace Zero.ZeroEngine.Common
 
             //往回调列表里加回调
             //这里加的是针对的回调
-            AsyncCallBack callBack = m_AsyncCallBackPool.Spawn(true);
+            ResMgrAsyncCallBack callBack = m_AsyncCallBackPool.Spawn(true);
             callBack.m_ObjDealFinish = dealFinish;
             callBack.m_ResObj = resObj;
             para.m_CallBackList.Add(callBack);
@@ -829,7 +829,7 @@ namespace Zero.ZeroEngine.Common
         /// </summary>
         IEnumerator AsyncLoadCor()
         {
-            List<AsyncCallBack> callBackList = null;
+            List<ResMgrAsyncCallBack> callBackList = null;
             //上一次yield的时间
             long lastYieldTime = System.DateTime.Now.Ticks;
             while (true)
@@ -902,7 +902,7 @@ namespace Zero.ZeroEngine.Common
 
                     for(int j = 0; j < callBackList.Count; j++)
                     {
-                        AsyncCallBack callBack = callBackList[j];
+                        ResMgrAsyncCallBack callBack = callBackList[j];
 
                         if (callBack != null && callBack.m_ObjDealFinish != null && callBack.m_ResObj != null)
                         {

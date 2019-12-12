@@ -84,7 +84,7 @@ namespace Zero.ZeroEngine.Common
         //在两种方式的，第二种时候的是资源加载内部的累加回调方式
         private Dictionary<uint, List<EffectAudioPrefab>> EffectAudioAsyncDic = new Dictionary<uint, List<EffectAudioPrefab>>();
 
-        private const string guid_Pre = "EAudioCor";
+        private const string guid_Pre = "EAudioCor_";
         private int guid_Post = 0;
 
 
@@ -190,7 +190,7 @@ namespace Zero.ZeroEngine.Common
         private string GetEffectAudioGuid()
         {
             guid_Post += 1;
-            string tempStr = string.Concat(guid_Pre, "_", guid_Post.ToString());
+            string tempStr = string.Concat(guid_Pre, guid_Post.ToString());
             return tempStr;
         }
 

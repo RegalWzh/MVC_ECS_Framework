@@ -16,16 +16,14 @@ namespace Zero.ZeroEngine.ECS
     public class RefreshAttComponent : BaseComponent
     {
         public int refreshID = 0;//刷新点ID
-        public float refreshTimer = 0;//刷新时间间隔
         public int refreshCount = 0;//目前所拥有数量
-        public int refreshMaxCount = 0;//刷新的最大数量
+        public TransferExcel transferData = null;//刷新点数据表
 
         public void Reset()
         {
             refreshID = 0;
-            refreshTimer = 0;
             refreshCount = 0;
-            refreshMaxCount = 0;
+            transferData = null;
         }
     }
 }

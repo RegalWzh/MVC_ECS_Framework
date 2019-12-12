@@ -52,89 +52,86 @@ namespace Zero.ZeroEngine.ECS
         //组件类中，类对象池
         public ClassObjectPool<BeSkillClass> SkillAttComBeSkillClassPool = new ClassObjectPool<BeSkillClass>(100);//施法者技能属性组件
 
-        ////--------组件数量-------目前:17
-        //public DDictionary<int, ActionComponent> ActionComDic = new DDictionary<int, ActionComponent>();//
-        //public DDictionary<int, AngleComponent> AngleComDic = new DDictionary<int, AngleComponent>();//
-        //public DDictionary<int, GameObjectComponent> GameObjectComDic = new DDictionary<int, GameObjectComponent>();//
-        //public DDictionary<int, HealthComponent> HealthComDic = new DDictionary<int, HealthComponent>();//
+        //--------组件数量-------目前:17
+        public DDictionary<int, ActionComponent> ActionComDic = new DDictionary<int, ActionComponent>();//
+        public DDictionary<int, AudioComponent> AudioComDic = new DDictionary<int, AudioComponent>();//
+        public DDictionary<int, GameObjectComponent> GameObjectComDic = new DDictionary<int, GameObjectComponent>();//
+        public DDictionary<int, HealthComponent> HealthComDic = new DDictionary<int, HealthComponent>();//
+        public DDictionary<int, MonsterAttComponent> MonsterAttComDic = new DDictionary<int, MonsterAttComponent>();//
 
-        //public DDictionary<int, MonsterBelongComponent> MonsterBelongComDic = new DDictionary<int, MonsterBelongComponent>();//
-        //public DDictionary<int, MonsterIDComponent> MonsterIDComDic = new DDictionary<int, MonsterIDComponent>();//
-        //public DDictionary<int, NameComponent> NameComDic = new DDictionary<int, NameComponent>();//
-        //public DDictionary<int, NpcAttComponent> NpcIDComDic = new DDictionary<int, NpcAttComponent>();//
+        public DDictionary<int, NameComponent> NameComDic = new DDictionary<int, NameComponent>();//
+        public DDictionary<int, NpcAttComponent> NpcAttComDic = new DDictionary<int, NpcAttComponent>();//
+        public DDictionary<int, PathComponent> PathComDic = new DDictionary<int, PathComponent>();//
+        public DDictionary<int, PositionComponent> PositionComDic = new DDictionary<int, PositionComponent>();//
+        public DDictionary<int, RefreshAttComponent> RefreshAttComDic = new DDictionary<int, RefreshAttComponent>();//
 
-        //public DDictionary<int, PathComponent> PathComDic = new DDictionary<int, PathComponent>();//
-        //public DDictionary<int, PositionComponent> PositionComDic = new DDictionary<int, PositionComponent>();//
-        //public DDictionary<int, RoleComponent> RoleComDic = new DDictionary<int, RoleComponent>();//
-        //public DDictionary<int, SpeedRotComponent> RotationComDic = new DDictionary<int, SpeedRotComponent>();//
-        //public DDictionary<int, RefreshAttComponent> RefreshComDic = new DDictionary<int, RefreshAttComponent>();//
-
-        //public DDictionary<int, SizeComponent> SizeComDic = new DDictionary<int, SizeComponent>();//
-        //public DDictionary<int, SpeedComponent> SpeedComDic = new DDictionary<int, SpeedComponent>();//
-        //public DDictionary<int, TransferAttComponent> TransferIDComDic = new DDictionary<int, TransferAttComponent>();//
-        //public DDictionary<int, WeaponComponent> WeaponComDic = new DDictionary<int, WeaponComponent>();//
-
-
-        //public void Init(Transform canSceneTrs,Transform canRecycleTrs)
-        //{
-        //    ZLogger.Info("世界角色中心层初始化");
-        //    sceneTrs = canSceneTrs;
-        //    recycleTrs = canRecycleTrs;
-        //    recycleTrs.gameObject.SetActive(false);
-
-        //    //--------系统数量-------目前:1
-        //    GameObjectSystem.Instance.Init();
-        //}
-
-        //public void Clear()
-        //{
-
-        //}
-
-        //public void AfterInit()
-        //{
-
-        //}
-
-        //public void Update(double deltatime)
-        //{
-        //    //--------系统数量-------目前:0
-        //    GameObjectSystem.Instance.Update(deltatime);
+        public DDictionary<int, RoleComponent> RoleComDic = new DDictionary<int, RoleComponent>();//
+        public DDictionary<int, SkillAttComponent> SkillAttComDic = new DDictionary<int, SkillAttComponent>();//
+        public DDictionary<int, SkillComponent> SkillComDic = new DDictionary<int, SkillComponent>();//
+        public DDictionary<int, SkillGameObjectComponent> SkillGameObjectComDic = new DDictionary<int, SkillGameObjectComponent>();//
+        public DDictionary<int, SkillPathComponent> SkillPathComDic = new DDictionary<int, SkillPathComponent>();//
+        
+        public DDictionary<int, TransferAttComponent> TransferAttComDic = new DDictionary<int, TransferAttComponent>();//
+        public DDictionary<int, WeaponComponent> WeaponComDic = new DDictionary<int, WeaponComponent>();//
 
 
-        //    //--------对象数量-------目前:7
-        //    //mainRoleET
-        //    //MonsterETDic.ApplyDelayCommands();
-        //    //MonsterRefreshETDic.ApplyDelayCommands();
-        //    //NpcETDic.ApplyDelayCommands();
-        //    //PlayerBornETDic.ApplyDelayCommands();
-        //    //SkillETDic.ApplyDelayCommands();
-        //    //TransferETDic.ApplyDelayCommands();
+        public void Init(Transform canSceneTrs, Transform canRecycleTrs)
+        {
+            ZLogger.Info("世界角色中心层初始化");
+            sceneTrs = canSceneTrs;
+            recycleTrs = canRecycleTrs;
+            recycleTrs.gameObject.SetActive(false);
 
-        //    //--------组件数量-------目前:17
-        //    ActionComDic.ApplyDelayCommands();
-        //    AngleComDic.ApplyDelayCommands();
-        //    GameObjectComDic.ApplyDelayCommands();
-        //    HealthComDic.ApplyDelayCommands();
+            //--------系统数量-------目前:1
+            GameObjectSystem.Instance.Init();
+        }
 
-        //    MonsterBelongComDic.ApplyDelayCommands();
-        //    MonsterIDComDic.ApplyDelayCommands();
-        //    NameComDic.ApplyDelayCommands();
-        //    NpcIDComDic.ApplyDelayCommands();
+        public void Clear()
+        {
 
-        //    PathComDic.ApplyDelayCommands();
-        //    PositionComDic.ApplyDelayCommands();
-        //    RefreshComDic.ApplyDelayCommands();
-        //    RoleComDic.ApplyDelayCommands();
-        //    RotationComDic.ApplyDelayCommands();
+        }
 
-        //    SizeComDic.ApplyDelayCommands();
-        //    SpeedComDic.ApplyDelayCommands();
-        //    TransferIDComDic.ApplyDelayCommands();
-        //    WeaponComDic.ApplyDelayCommands();
+        public void AfterInit()
+        {
+
+        }
+
+        public void Update(double deltatime)
+        {
+            //--------系统数量-------目前:0
 
 
-        //}
+            //--------对象数量-------目前:7
+            //mainRoleET
+            //MonsterETDic.ApplyDelayCommands();
+            //MonsterRefreshETDic.ApplyDelayCommands();
+            //NpcETDic.ApplyDelayCommands();
+            //PlayerBornETDic.ApplyDelayCommands();
+            //SkillETDic.ApplyDelayCommands();
+            //TransferETDic.ApplyDelayCommands();
+
+            //--------组件数量-------目前:17
+            ActionComDic.ApplyDelayCommands();
+            AudioComDic.ApplyDelayCommands();
+            GameObjectComDic.ApplyDelayCommands();
+            HealthComDic.ApplyDelayCommands();
+            MonsterAttComDic.ApplyDelayCommands();
+
+            NameComDic.ApplyDelayCommands();
+            NpcAttComDic.ApplyDelayCommands();
+            PathComDic.ApplyDelayCommands();
+            PositionComDic.ApplyDelayCommands();
+            RefreshAttComDic.ApplyDelayCommands();
+
+            RoleComDic.ApplyDelayCommands();
+            SkillAttComDic.ApplyDelayCommands();
+            SkillComDic.ApplyDelayCommands();
+            SkillGameObjectComDic.ApplyDelayCommands();
+            SkillPathComDic.ApplyDelayCommands();
+
+            TransferAttComDic.ApplyDelayCommands();
+            WeaponComDic.ApplyDelayCommands();
+        }
 
         ///// <summary>
         ///// 创建主角色

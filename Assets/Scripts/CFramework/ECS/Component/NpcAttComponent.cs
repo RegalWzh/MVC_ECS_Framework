@@ -16,9 +16,11 @@ namespace Zero.ZeroEngine.ECS
     public class NpcAttComponent : BaseComponent
     {
         public int npcID = 0;//NPC_ID
+        public NpcExcel npcData = null;//NPC数据表
         public void Reset()
         {
             npcID = 0;
+            npcData = null;
         }
     }
 }

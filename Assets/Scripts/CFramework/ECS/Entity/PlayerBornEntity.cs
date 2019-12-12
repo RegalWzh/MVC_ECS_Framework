@@ -15,20 +15,20 @@ namespace Zero.ZeroEngine.ECS
 {
     public class PlayerBornEntity : BaseEntity
     {
-        //public NameComponent nameCom;
-        //public PositionComponent positionCom;
+        public NameComponent nameCom;
+        public PositionComponent positionCom;
 
-        //public PlayerBornEntity()
-        //{
-        //    nameCom = new NameComponent() { baseEntity = this };
-        //    positionCom = new PositionComponent() { baseEntity = this };
-        //}
+        public PlayerBornEntity()
+        {
+            nameCom = new NameComponent() { baseEntity = this };
+            positionCom = new PositionComponent() { baseEntity = this };
+        }
 
-        //public override void Reset()
-        //{
-        //    base.Reset();
-        //    nameCom.Reset();
-        //    positionCom.Reset();
-        //}
+        public override void Reset()
+        {
+            base.Reset();
+            nameCom.Reset();
+            positionCom.Reset();
+        }
     }
 }

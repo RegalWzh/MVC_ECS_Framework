@@ -15,38 +15,27 @@ namespace Zero.ZeroEngine.ECS
 {
     public class TransferEntity : BaseEntity
     {
-        //public GameObjectComponent gameObjCom;
-        //public ModelComponent modelCom;
-        //public NameComponent nameCom;
-        //public PositionComponent positionCom;
-        //public SpeedRotComponent rotationCom;
+        public AudioComponent audioCom;
+        public GameObjectComponent gameObjCom;
+        public NameComponent nameCom;
+        public TransferAttComponent transferIDCom;
 
-        //public SizeComponent sizeCom;
-        //public TransferAttComponent transferIDCom;
+        public TransferEntity()
+        {
+            audioCom = new AudioComponent() { baseEntity = this };
+            gameObjCom = new GameObjectComponent() { baseEntity = this };
+            nameCom = new NameComponent() { baseEntity = this };
+            transferIDCom = new TransferAttComponent() { baseEntity = this };
+        }
 
-        //public TransferEntity()
-        //{
-        //    gameObjCom = new GameObjectComponent() { baseEntity = this };
-        //    modelCom = new ModelComponent() { baseEntity = this };
-        //    nameCom = new NameComponent() { baseEntity = this };
-        //    positionCom = new PositionComponent() { baseEntity = this };
-        //    rotationCom = new SpeedRotComponent() { baseEntity = this };
+        public override void Reset()
+        {
+            base.Reset();
 
-        //    sizeCom = new SizeComponent() { baseEntity = this };
-        //    transferIDCom = new TransferAttComponent() { baseEntity = this };
-        //}
-
-        //public override void Reset()
-        //{
-        //    base.Reset();
-        //    gameObjCom.Reset();
-        //    modelCom.Reset();
-        //    nameCom.Reset();
-        //    positionCom.Reset();
-        //    rotationCom.Reset();
-
-        //    sizeCom.Reset();
-        //    transferIDCom.Reset();
-        //}
+            audioCom.Reset();
+            gameObjCom.Reset();
+            nameCom.Reset();
+            transferIDCom.Reset();
+        }
     }
 }

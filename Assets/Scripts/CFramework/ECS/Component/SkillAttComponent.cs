@@ -172,7 +172,7 @@ namespace Zero.ZeroEngine.ECS
         public bool initBoo = false;//是否实例化过
         public float releaseObjTime = 0;//技能特效释放时间
         public List<GameObject> beSkillEffectObjList = new List<GameObject>();//受到攻击的技能特效
-        public SkillAcountExcel skillAcountData = null;//结算模块数据
+        public SkillAcountExcel skillAcountData = null;//结算模块数据数据表
 
         public void Reset()
         {
@@ -194,7 +194,7 @@ namespace Zero.ZeroEngine.ECS
         public float countTime = 0;//累计时间
         public int releaseSkillGuid = 0;//释放出来的技能实体唯一ID
         public bool isAimAvtiveBoo = false;
-        public ActiveSkillExcel activeSkillData = null;//技能上层模块
+        public ActiveSkillExcel activeSkillData = null;//技能上层模块数据表
         public List<GameObject> skillEffectObjList = new List<GameObject>();
 
 

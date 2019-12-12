@@ -15,63 +15,49 @@ namespace Zero.ZeroEngine.ECS
 {
     public class NpcRoleEntity : BaseEntity
     {
-        //public ActionComponent actionCom;
-        //public AngleComponent angleCom;
-        //public GameObjectComponent gameObjCom;
-        //public HealthComponent healthCom;
+        public ActionComponent actionCom;
+        public AudioComponent audioCom;
+        public GameObjectComponent gameObjCom;
+        public HealthComponent healthCom;
+        public NameComponent nameCom;
 
-        //public ModelComponent modelCom;
-        //public NameComponent nameCom;
-        //public NpcAttComponent npcIDCom;
-        //public PathComponent pathCom;
-        //public PositionComponent positionCom;
+        public NpcAttComponent npcAttCom;
+        public PathComponent pathCom;
+        public RoleComponent roleCom;
+        public SkillAttComponent skillAttCom;
+        public WeaponComponent weaponCom;
 
-        //public RoleComponent roleCom;
-        //public SpeedRotComponent rotationCom;
-        //public SizeComponent sizeCom;
-        //public SpeedComponent speedCom;
-        //public WeaponComponent weaponCom;
+        public NpcRoleEntity()
+        {
+            actionCom = new ActionComponent() { baseEntity = this };
+            audioCom = new AudioComponent() { baseEntity = this };
+            gameObjCom = new GameObjectComponent() { baseEntity = this };
+            healthCom = new HealthComponent() { baseEntity = this };
+            nameCom = new NameComponent() { baseEntity = this };
 
-        //public NpcRoleEntity()
-        //{
-        //    actionCom = new ActionComponent() { baseEntity = this };
-        //    angleCom = new AngleComponent() { baseEntity = this };
-        //    gameObjCom = new GameObjectComponent() { baseEntity = this };
-        //    healthCom = new HealthComponent() { baseEntity = this };
+            npcAttCom = new NpcAttComponent() { baseEntity = this };
+            pathCom = new PathComponent() { baseEntity = this };
+            roleCom = new RoleComponent() { baseEntity = this };
+            skillAttCom = new SkillAttComponent() { baseEntity = this };
+            weaponCom = new WeaponComponent() { baseEntity = this };
+        }
 
-        //    modelCom = new ModelComponent() { baseEntity = this };
-        //    nameCom = new NameComponent() { baseEntity = this };
-        //    npcIDCom = new NpcAttComponent() { baseEntity = this };
-        //    pathCom = new PathComponent() { baseEntity = this };
-        //    positionCom = new PositionComponent() { baseEntity = this };
+        public override void Reset()
+        {
+            base.Reset();
+            actionCom.Reset();
+            audioCom.Reset();
+            gameObjCom.Reset();
+            healthCom.Reset();
+            nameCom.Reset();
 
-        //    roleCom = new RoleComponent() { baseEntity = this };
-        //    rotationCom = new SpeedRotComponent() { baseEntity = this };
-        //    sizeCom = new SizeComponent() { baseEntity = this };
-        //    speedCom = new SpeedComponent() { baseEntity = this };
-        //    weaponCom = new WeaponComponent() { baseEntity = this };
-        //}
+            npcAttCom.Reset();
+            pathCom.Reset();
+            roleCom.Reset();
+            skillAttCom.Reset();
+            weaponCom.Reset();
+        }
 
-        //public override void Reset()
-        //{
-        //    base.Reset();
-        //    actionCom.Reset();
-        //    angleCom.Reset();
-        //    gameObjCom.Reset();
-        //    healthCom.Reset();
-
-        //    modelCom.Reset();
-        //    nameCom.Reset();
-        //    npcIDCom.Reset();
-        //    pathCom.Reset();
-        //    positionCom.Reset();
-            
-        //    roleCom.Reset();
-        //    rotationCom.Reset();
-        //    sizeCom.Reset();
-        //    speedCom.Reset();
-        //    weaponCom.Reset();
-        //}
     }
 }
 

@@ -13,6 +13,15 @@ using UnityEngine;
 using Zero.Plugins.Base;
 using Zero.ZeroEngine.Core;
 
+//=====================================================
+// - 1.此处还可以优化，比如创建协程所挂载的OBJ，可以加个池子来存储，就不用创建太多了。（还没弄，时间不够）
+// - 2.
+// - 3.
+// - 4.
+// - 5.
+// - 6.
+//======================================================
+
 namespace Zero.ZeroEngine.Util
 {
     public class CoroutineMgr : SingletonMono<CoroutineMgr>

@@ -19,6 +19,7 @@ namespace Zero.ZeroEngine.ECS
         public int monsterBelongID = 0;//怪物所属刷新点ID
         public int monsterSummonBoo = 0;//怪物是否属于召唤物
         public int monsterMasterID = 0;//怪物主人
+        public MonsterExcel monsterData = null;//怪物数据表
 
         public void Reset()
         {
@@ -26,6 +27,7 @@ namespace Zero.ZeroEngine.ECS
             monsterBelongID = 0;
             monsterSummonBoo = 0;
             monsterMasterID = 0;
-    }
+            monsterData = null;
+        }
     }
 }
